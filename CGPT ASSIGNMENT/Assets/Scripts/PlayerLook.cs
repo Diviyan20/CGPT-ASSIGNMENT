@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    public float mouseSens = 500f;
+    public float mouseSens = 5f;
     public Transform Body;
 
     float xRotation = 0f;
@@ -16,8 +16,8 @@ public class PlayerLook : MonoBehaviour
     }
     private void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
+        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSens;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSens;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);

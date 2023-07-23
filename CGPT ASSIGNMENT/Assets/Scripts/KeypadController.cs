@@ -10,7 +10,7 @@ public class KeypadController : MonoBehaviour
     public CharacterController player;
     private PlayerLook playerLook;
     private bool keypadActive = false;
-    public Button exitButton;   
+    public Button exitButton;
 
     private void Start()
     {

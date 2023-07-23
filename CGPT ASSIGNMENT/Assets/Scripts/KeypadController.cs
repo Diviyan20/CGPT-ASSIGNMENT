@@ -1,33 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KeypadController : MonoBehaviour
 {
     public GameObject keypadCanvas; // Reference to the Keypad Canvas in the Inspector
     private bool CursorVisibility;
-
-
+    public CharacterController player;
+    private PlayerLook playerLook;
     private bool keypadActive = false;
+    public Button exitButton;   
 
     private void Start()
     {
-        // Set the Keypad Canvas to inactive at the start of the game
+        player = FindObjectOfType<CharacterController>();
+        playerLook = FindObjectOfType<PlayerLook>();
         keypadCanvas.SetActive(false);
         CursorVisibility = Cursor.visible;
+        exitButton.onClick.AddListener(OnExitButtonClick);
     }
 
-    private void Update()
+    private void OnMouseDown()
     {
-        // Detect player input for "E" key
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            // Toggle keypad visibility on "E" press
-            keypadActive = !keypadActive;
-            keypadCanvas.SetActive(keypadActive);
+        keypadActive = !keypadActive;
+        keypadCanvas.SetActive(keypadActive);
 
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        player.enabled = false;
+        playerLook.enabled = false;
+
+    }
+
+    public void OnExitButtonClick()
+    {
+        keypadActive = false;
+        keypadCanvas.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = CursorVisibility;
+
+        player.enabled = true;
+        playerLook.enabled = true;
     }
 }

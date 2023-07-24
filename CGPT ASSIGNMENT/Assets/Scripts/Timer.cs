@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    public float timeValue = 90;
+    public float timeValue = 600;
     public TextMeshProUGUI timerText;
-
+	
     void Start()
     {
         timerText = GetComponent<TextMeshProUGUI>(); // Assign the TextMeshProUGUI component

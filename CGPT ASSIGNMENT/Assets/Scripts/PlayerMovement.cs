@@ -6,7 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     public float speed = 12f;
-   
+
+    private bool isMoving;
+
+    public bool IsMoving()
+    {
+        return isMoving;
+    }
+
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
@@ -14,5 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 dir = transform.right * x + transform.forward * z;
         controller.Move(dir * speed * Time.deltaTime);
+
+        // Check if the player is moving
+        isMoving = (x != 0f || z != 0f);
     }
 }

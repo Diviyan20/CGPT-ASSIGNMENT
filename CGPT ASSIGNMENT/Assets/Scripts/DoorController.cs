@@ -6,7 +6,7 @@ public class DoorController : MonoBehaviour
 {
     public float slidingDistance = 2.0f; // The distance the door will slide open
     public float slidingSpeed = 3.0f; // The speed at which the door slides open
-    public bool isLocked = true; // Indicates if the door is locked initially
+    public bool isLocked = false; // Indicates if the door is locked initially
 
     private Vector3 initialPosition;
     private Vector3 targetPosition;
@@ -20,15 +20,9 @@ public class DoorController : MonoBehaviour
 
     private void Update()
     {
-        // Detect player input for "E" key
-        if (isLocked && Input.GetKeyDown(KeyCode.E))
+        // Toggle door state on "E" press if it's not locked
+        if (!isLocked && Input.GetKeyDown(KeyCode.E))
         {
-            // Show a message or feedback to indicate the door is locked
-            Debug.Log("The door is locked. Find the passcode to unlock it.");
-        }
-        else if (!isLocked && Input.GetKeyDown(KeyCode.E))
-        {
-            // Toggle door state on "E" press
             isOpen = !isOpen;
         }
 

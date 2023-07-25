@@ -11,6 +11,7 @@ public class KeypadController : MonoBehaviour
     private PlayerLook playerLook;
     private bool keypadActive = false;
     public Button exitButton;
+    
 
     private void Start()
     {
@@ -45,4 +46,6 @@ public class KeypadController : MonoBehaviour
         player.enabled = true;
         playerLook.enabled = true;
     }
+
+    
 }

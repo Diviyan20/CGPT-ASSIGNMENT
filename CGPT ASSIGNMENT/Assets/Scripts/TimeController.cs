@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeController : MonoBehaviour
 {
-    public float totalTimeInSeconds = 600f; // 10 minutes in seconds
+    public float totalTimeInSeconds = 10f; // 10 minutes in seconds
     public Text timerText; // Reference to the UI Text that will display the timer
 
     private float currentTime; // Current time left in seconds
@@ -78,5 +79,6 @@ public class TimeController : MonoBehaviour
         isTimerRunning = false;
         timerText.text = "00:00";
         Debug.Log("Timer Finished!");
+        SceneManager.LoadScene("gameOverScene");
     }
 }

@@ -9,12 +9,12 @@ public class Timer : MonoBehaviour
     public float timeValue = 600;
     public TextMeshProUGUI timerText;
 	
-    void Start()
+    public void Start()
     {
         timerText = GetComponent<TextMeshProUGUI>(); // Assign the TextMeshProUGUI component
     }
 
-    void Update()
+    public void Update()
     {
         if (timeValue > 0)
         {

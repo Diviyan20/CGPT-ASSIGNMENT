@@ -4729,7 +4729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05211037c67e1d4498bbb1e119933b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTimeInSeconds: 10
+  totalTimeInSeconds: 300
   timerText: {fileID: 923131459}
 --- !u!4 &2040291428
 Transform:
@@ -5148,6 +5148,10 @@ PrefabInstance:
       propertyPath: noteController
       value: 
       objectReference: {fileID: 1708689997}
+    - target: {fileID: 1675274557461521959, guid: 1b3efbd3c69716b459a68c0eaaa10aa9, type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2897712888582489622, guid: 1b3efbd3c69716b459a68c0eaaa10aa9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5182,7 +5186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5857686812198748854, guid: 1b3efbd3c69716b459a68c0eaaa10aa9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.299
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 5857686812198748854, guid: 1b3efbd3c69716b459a68c0eaaa10aa9, type: 3}
       propertyPath: m_LocalPosition.z

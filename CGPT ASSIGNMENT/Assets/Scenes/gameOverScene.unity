@@ -262,7 +262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Exit
+  m_text: 'Exit to Main Menu
 
 '
   m_isRightToLeft: 0
@@ -984,7 +984,7 @@ GameObject:
   - component: {fileID: 1437996286}
   - component: {fileID: 1437996285}
   m_Layer: 5
-  m_Name: Exit
+  m_Name: 'Exit '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -18,4 +18,9 @@ public class LevelLoader : MonoBehaviour
             yield return null;
         }
     }
+	
+	public void Exit()
+	{
+        SceneManager.LoadScene ("LoadScene");
+    }
 }

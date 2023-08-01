@@ -1,39 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class ShowCanvasOnP : MonoBehaviour
+public class PauseManager : MonoBehaviour
 {
-    public GameObject pausecanvas; // Reference to the UI Canvas GameObject
+    public GameObject pauseCanvas;
+    private bool isPaused = false;
+	public GameObject ToH;
+    public GameObject ToS;
+	public PlayerLook playerLook;
+	
+	private bool isGamePaused = false;
 
     void Start()
     {
-        pausecanvas.SetActive(false); // Set the canvas to be initially hidden
+        pauseCanvas.SetActive(false); // Set the canvas to be initially hidden
+		ToS.SetActive(false);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            // Toggle the canvas visibility when the 'P' key is pressed
-            bool canvasActive = !pausecanvas.activeSelf;
-            pausecanvas.SetActive(canvasActive);
-
-            // Enable or disable the mouse cursor based on the canvas visibility
-            if (canvasActive)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                Time.timeScale = 0f; // Pause the game by setting timeScale to 0
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-                Time.timeScale = 1f; // Resume the game by setting timeScale back to 1
-            }
+            TogglePause();
         }
     }
+
+    private void TogglePause()
+    {
+        isGamePaused = !isGamePaused;
+
+        Time.timeScale = isGamePaused ? 0f : 1f;
+        Cursor.lockState = isGamePaused ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = isGamePaused;
+
+        pauseCanvas.SetActive(isGamePaused);
+
+        // Enable or disable camera movement based on the pause state
+        playerLook.SetCameraMovement(!isGamePaused);
+    }
+
+    // Update is called once per frame
+    public void Continue()
+    {
+        TogglePause();
+    }
+
+    public void PauseSetting()
+    {
+        ToS.SetActive(true);
+        ToH.SetActive(false);
+    }
+
+    public void PauseBack()
+    {
+        ToH.SetActive(true);
+        ToS.SetActive(false);
+    }
+
+    public void Exittomainmenu()
+    {
+        SceneManager.LoadScene("LoadScene");
+		Time.timeScale = 1f;
+    }
 }
-
-

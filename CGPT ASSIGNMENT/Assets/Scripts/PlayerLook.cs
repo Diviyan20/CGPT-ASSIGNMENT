@@ -8,6 +8,7 @@ public class PlayerLook : MonoBehaviour
     public Transform Body;
 
     float xRotation = 0f;
+	private bool canLook = true;
 
 
     private void Start()
@@ -16,17 +17,21 @@ public class PlayerLook : MonoBehaviour
     }
     private void Update()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSens;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSens;
+		if (canLook && Time.timeScale > 0f)
+		{
+			float mouseX = Input.GetAxisRaw("Mouse X") * mouseSens;
+			float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSens;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+			xRotation -= mouseY;
+			xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+			transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         
 
-        Body.Rotate(Vector3.up * mouseX); 
+			Body.Rotate(Vector3.up * mouseX); 
+		}
     }
-
-
-
+	public void SetCameraMovement(bool canMove)
+	{
+		canLook = canMove;
+	}
 }

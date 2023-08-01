@@ -2550,8 +2550,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2090629618}
-        m_TargetAssemblyTypeName: PauseMenuController, Assembly-CSharp
+      - m_Target: {fileID: 2090629616}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: Continue
         m_Mode: 1
         m_Arguments:
@@ -3034,8 +3034,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2090629618}
-        m_TargetAssemblyTypeName: PauseMenuController, Assembly-CSharp
+      - m_Target: {fileID: 2090629616}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: PauseBack
         m_Mode: 1
         m_Arguments:
@@ -6349,8 +6349,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2090629618}
-        m_TargetAssemblyTypeName: PauseMenuController, Assembly-CSharp
+      - m_Target: {fileID: 2090629616}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: Exittomainmenu
         m_Mode: 1
         m_Arguments:
@@ -6719,6 +6719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: f0fc4e780f7a82d4cac885a1a1078263, type: 2}
+  volumeSlider: {fileID: 108776890}
 --- !u!114 &1709753508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7866,8 +7867,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2090629618}
-        m_TargetAssemblyTypeName: PauseMenuController, Assembly-CSharp
+      - m_Target: {fileID: 2090629616}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: PauseSetting
         m_Mode: 1
         m_Arguments:
@@ -7926,7 +7927,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2090629617}
   - component: {fileID: 2090629616}
-  - component: {fileID: 2090629618}
   m_Layer: 0
   m_Name: Pause
   m_TagString: Untagged
@@ -7946,7 +7946,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c78c8e7c2c40ad44b04cd27a34004da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pausecanvas: {fileID: 1841041853}
+  pauseCanvas: {fileID: 1841041853}
+  ToH: {fileID: 102925349}
+  ToS: {fileID: 1709753505}
+  playerLook: {fileID: 0}
 --- !u!4 &2090629617
 Transform:
   m_ObjectHideFlags: 0
@@ -7962,20 +7965,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2090629618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090629615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f1a30524af89642b860049ae47415a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ToH: {fileID: 102925349}
-  ToS: {fileID: 1709753505}
 --- !u!1 &2113454870
 GameObject:
   m_ObjectHideFlags: 0

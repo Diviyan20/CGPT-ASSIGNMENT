@@ -6,9 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     public float speed = 12f;
-
     private bool isMoving;
-
+    public float gravity = -9f;
+    Vector3 velocity;
     public bool IsMoving()
     {
         return isMoving;
@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 dir = transform.right * x + transform.forward * z;
         controller.Move(dir * speed * Time.deltaTime);
 
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
         // Check if the player is moving
         isMoving = (x != 0f || z != 0f);
     }

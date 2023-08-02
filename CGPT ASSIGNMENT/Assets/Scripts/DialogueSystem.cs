@@ -29,8 +29,9 @@ public class DialogueSystem : MonoBehaviour
             else
             {
                 StopAllCoroutines();
-                textComponent.text = text[index];
                 player.enabled = true;
+                textComponent.text = text[index];
+                
             }
         }
     }

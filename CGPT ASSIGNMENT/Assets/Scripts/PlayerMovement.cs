@@ -24,7 +24,9 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-        // Check if the player is moving
         isMoving = (x != 0f || z != 0f);
+
+
+        
     }
 }

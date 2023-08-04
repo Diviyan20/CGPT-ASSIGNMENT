@@ -10,6 +10,7 @@ public class DialogueSystem : MonoBehaviour
     public float dialogueSpeed;
     private int index;
     public CharacterController player;
+    private bool DialogueActive = true;
     private void Start()
     {
         player = FindObjectOfType<CharacterController>();
@@ -19,19 +20,19 @@ public class DialogueSystem : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (DialogueActive) // Only process input if the dialogue is active
         {
-            if (textComponent.text == text[index])
+            if (Input.GetMouseButtonDown(0))
             {
-                NextDialogue();
-            }
-
-            else
-            {
-                StopAllCoroutines();
-                player.enabled = true;
-                textComponent.text = text[index];
-                
+                if (textComponent.text == text[index])
+                {
+                    NextDialogue();
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    textComponent.text = text[index];
+                }
             }
         }
     }
@@ -54,6 +55,8 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
+
+
     void NextDialogue()
     {
         if (index < text.Length - 1)
@@ -61,11 +64,13 @@ public class DialogueSystem : MonoBehaviour
             index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
+            DialogueActive = true;
         }
 
         else
         {
             gameObject.SetActive(false);
+            player.enabled = true;
         }
     }
 }

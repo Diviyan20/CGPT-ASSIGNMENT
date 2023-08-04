@@ -3256,7 +3256,7 @@ MonoBehaviour:
   - How on earth am I supposed to get out of here?
   - Wait, that looks like a note on the chair
   dialogueSpeed: 0.04
-  player: {fileID: 0}
+  player: {fileID: 838696713}
 --- !u!4 &779973902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 459d6d1f27538074fb27271fea27718a, type: 3}
@@ -4797,7 +4797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -111.6, y: 132}
+  m_AnchoredPosition: {x: -111.39, y: 71.2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1169511950

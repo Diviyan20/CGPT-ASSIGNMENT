@@ -11,6 +11,7 @@ public class Keypad : MonoBehaviour
     private string password = "6716";
     public GameObject door; // Reference to the door GameObject
     public TimeController timer;
+    public AudioSource victorySound;
 
     // Method to handle button presses and update the number display
     public void OnButtonPress(string buttonValue)
@@ -42,6 +43,7 @@ public class Keypad : MonoBehaviour
             // Disable the door GameObject when the correct password is entered
             door.SetActive(false);
             timer.StopTimer();
+            victorySound.Play();
         }
         else
         {

@@ -11,6 +11,7 @@ public class DialogueSystem : MonoBehaviour
     private int index;
     public CharacterController player;
     private bool DialogueActive = true;
+    [SerializeField] private AudioSource voiceOver;
     private void Start()
     {
         player = FindObjectOfType<CharacterController>();
@@ -32,6 +33,7 @@ public class DialogueSystem : MonoBehaviour
                 {
                     StopAllCoroutines();
                     textComponent.text = text[index];
+                    voiceOver.Play();
                 }
             }
         }

@@ -12,9 +12,11 @@ public class DialogueSystem : MonoBehaviour
     public CharacterController player;
     private bool DialogueActive = true;
     [SerializeField] private AudioSource voiceOver;
+    [SerializeField] private TimeController timer;
     private void Start()
     {
         player = FindObjectOfType<CharacterController>();
+        timer = FindObjectOfType<TimeController>();
         textComponent.text = string.Empty;
         BeginDialogue();
     }
@@ -33,7 +35,7 @@ public class DialogueSystem : MonoBehaviour
                 {
                     StopAllCoroutines();
                     textComponent.text = text[index];
-                    voiceOver.Play();
+                   
                 }
             }
         }
@@ -57,7 +59,7 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-
+  
 
     void NextDialogue()
     {
@@ -73,6 +75,9 @@ public class DialogueSystem : MonoBehaviour
         {
             gameObject.SetActive(false);
             player.enabled = true;
+            voiceOver.Play();
+            timer.StartTimer();
+            
         }
     }
 }

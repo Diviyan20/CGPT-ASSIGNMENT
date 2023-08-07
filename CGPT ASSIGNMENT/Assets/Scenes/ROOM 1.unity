@@ -2412,7 +2412,7 @@ GameObject:
   - component: {fileID: 609153805}
   - component: {fileID: 609153806}
   m_Layer: 0
-  m_Name: Victory Sound
+  m_Name: Unlock Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2443,7 +2443,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e514cee1890fe0c4090aea23a82a5799, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1527a8de80403a84085cc7dcae664771, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2451,7 +2451,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2963,7 +2963,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 30
+  m_Intensity: 6.89
   m_Range: 11.02338
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3491,7 +3491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -251.5, y: -107}
+  m_AnchoredPosition: {x: -235, y: -107}
   m_SizeDelta: {x: -500, y: -100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &767586175
@@ -8621,6 +8621,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2040291427}
     - target: {fileID: 6690568602019593293, guid: 8229b182c49c59147b5b1b55e68b6af5, type: 3}
+      propertyPath: unlockSound
+      value: 
+      objectReference: {fileID: 609153806}
+    - target: {fileID: 6690568602019593293, guid: 8229b182c49c59147b5b1b55e68b6af5, type: 3}
       propertyPath: victorySound
       value: 
       objectReference: {fileID: 609153806}
@@ -8759,6 +8763,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "I am an even number, add 2 to me  and I become 8. What \nnumber am
         I?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6194228722056122488, guid: 1b3efbd3c69716b459a68c0eaaa10aa9, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6810853838925010009, guid: 1b3efbd3c69716b459a68c0eaaa10aa9, type: 3}
       propertyPath: m_Name

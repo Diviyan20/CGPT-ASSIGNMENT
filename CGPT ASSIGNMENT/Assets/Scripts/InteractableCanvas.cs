@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteractableCanvas : MonoBehaviour
 {
     public GameObject canvasObject;
-    private GameObject currentInteractable;
+    public GameObject currentInteractable;
 
     [SerializeField] private Transform raycastPoint; // Reference to the GameObject that will be the origin of the raycast.
 

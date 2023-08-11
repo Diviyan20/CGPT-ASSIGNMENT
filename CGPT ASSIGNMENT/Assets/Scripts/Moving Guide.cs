@@ -8,7 +8,7 @@ public class CanvasController : MonoBehaviour
     public PlayerMovement playerMovement;
 
     private bool isCanvasActive = true;
-    private float movementTimer = 3f;
+    private float movementTimer = 7f;
 
     private void Start()
     {
@@ -18,9 +18,7 @@ public class CanvasController : MonoBehaviour
 
     private void Update()
     {
-        if (isCanvasActive && playerMovement.IsMoving())
-        {
-            // Start the movement timer
+        // Start the movement timer
             movementTimer -= Time.deltaTime;
 
             if (movementTimer <= 0f)
@@ -29,6 +27,6 @@ public class CanvasController : MonoBehaviour
                 canvasObject.SetActive(false);
                 isCanvasActive = false;
             }
-        }
-    }
+       
+   }
 }

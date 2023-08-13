@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractableCanvas : MonoBehaviour
 {
     public GameObject canvasObject;
+	public GameObject canvasObject2;
     public GameObject currentInteractable;
 
     [SerializeField] private Transform raycastPoint; // Reference to the GameObject that will be the origin of the raycast.
@@ -23,12 +24,23 @@ public class InteractableCanvas : MonoBehaviour
         {
             // Show the canvas when pointing at an interactable item
             canvasObject.SetActive(true);
+			canvasObject2.SetActive(false);
             currentInteractable = hit.collider.gameObject;
         }
+		
+		else if (hit.collider.CompareTag("Wooden Door"))
+		{
+            // Show the canvas when pointing at an interactable item
+            canvasObject.SetActive(false);
+			canvasObject2.SetActive(true);
+            currentInteractable = hit.collider.gameObject;
+        }
+		
         else
         {
             // Hide the canvas when not pointing at an interactable item
             canvasObject.SetActive(false);
+			canvasObject2.SetActive(false);
             currentInteractable = null;
         }
     }

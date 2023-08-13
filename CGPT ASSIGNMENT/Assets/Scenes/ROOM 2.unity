@@ -1694,6 +1694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ce455c1fba5dc4a80d77ca42437b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 1605858741}
   player: {fileID: 105176831}
 --- !u!4 &1187379643 stripped
 Transform:

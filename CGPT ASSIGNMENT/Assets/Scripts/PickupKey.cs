@@ -4,33 +4,44 @@ using UnityEngine;
 
 public class PickupKey : MonoBehaviour
 {
-    public GameObject player;
+    [SerializeField] private GameObject door;
+    [SerializeField] private GameObject player;
 
     private void Start()
     {
-        if (player == null)
+        if(door == null)
         {
-            player = GameObject.FindGameObjectWithTag("Player");
+            door = GameObject.FindGameObjectWithTag("Door");
         }
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && NearKey())
+        if(Input.GetKeyDown(KeyCode.E) && IsNearKey())
         {
-            PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
-            if (playerMovement != null)
+            UnlockDoor unlock = door.GetComponent<UnlockDoor>();
+
+            if(unlock!=null)
             {
-                Destroy(gameObject);
+                unlock.Unlock();
             }
+           
         }
     }
 
-    private bool NearKey()
+    private bool IsNearKey()
     {
-        float distance = Vector3.Distance(player.transform.position, transform.position);
-        float pickupDistance = 2.0f;
+        float distance = Vector3.Distance(transform.position,player.transform.position);
+        float PickupDistance = 2.0f;
 
-        return distance <= pickupDistance;
+        return distance <= PickupDistance;
+    }
+
+    public void KeyCollected()
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

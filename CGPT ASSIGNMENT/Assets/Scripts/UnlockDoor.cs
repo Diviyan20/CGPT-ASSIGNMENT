@@ -6,18 +6,21 @@ public class UnlockDoor : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject door;
+    [SerializeField] private GameObject key;
+ 
 
     private void Start()
     {
+        
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
     }
 
-    private void Update()
+    public void Unlock()
     {
-        if(Input.GetKeyDown(KeyCode.E) && IsNearDoor())
+        if(IsNearDoor())
         {
             Destroy(door);
         }

@@ -1252,6 +1252,10 @@ PrefabInstance:
       value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 1675274557461521959, guid: 1b3efbd3c69716b459a68c0eaaa10aa9, type: 3}
+      propertyPath: keys
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675274557461521959, guid: 1b3efbd3c69716b459a68c0eaaa10aa9, type: 3}
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
@@ -2425,7 +2429,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 105176831}
   door: {fileID: 1605858741}
-  requiredKey: 1
 --- !u!1 &1608407212
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,7 +21,6 @@ public class PickupKey : MonoBehaviour
             PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
             if (playerMovement != null)
             {
-                playerMovement.ObtainKey();
                 Destroy(gameObject);
             }
         }

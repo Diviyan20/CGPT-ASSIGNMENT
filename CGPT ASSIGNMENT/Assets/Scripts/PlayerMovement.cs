@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 12f;
     private bool isMoving;
     public float gravity = -9f;
-    public int keys = 0;
     Vector3 velocity;
     public bool IsMoving()
     {
@@ -26,11 +25,6 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
         isMoving = (x != 0f || z != 0f);     
-    }
-
-   public void ObtainKey()
-    {
-        keys += 1;
     }
 
 }

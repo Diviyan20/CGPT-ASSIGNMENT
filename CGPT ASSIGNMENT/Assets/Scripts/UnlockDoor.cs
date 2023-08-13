@@ -6,7 +6,6 @@ public class UnlockDoor : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject door;
-    public int requiredKey=1;
 
     private void Start()
     {
@@ -16,10 +15,9 @@ public class UnlockDoor : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        PlayerMovement playerMovement = other.GetComponent<PlayerMovement>();
-        if(playerMovement!=null && Input.GetKeyDown(KeyCode.E) && IsNearDoor() && playerMovement.keys == requiredKey )
+        if(Input.GetKeyDown(KeyCode.E) && IsNearDoor())
         {
             Destroy(door);
         }

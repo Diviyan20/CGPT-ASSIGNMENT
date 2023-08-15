@@ -5,30 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
-    public string nextScene = "ROOM 2";
-    [SerializeField] private GameObject player;
+    [SerializeField] private Animator anim;
     [SerializeField] private GameObject door;
-    private Animator anim;
-
-    private void Start()
-    {
-        anim = anim.GetComponent<Animator>(); 
-    }
+    [SerializeField] private Transform raycastPoint;
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && IsNearDoor())
-        {
-            SceneManager.LoadScene(nextScene);
+        RaycastHit hit;
+        if (Physics.Raycast(raycastPoint.position, raycastPoint.forward, out hit))
+            {
+            if (Input.GetKeyDown(KeyCode.E) && hit.collider.CompareTag("Wooden Door"))
+            {
+                LoadNextScene();
+            }
         }
     }
 
-    private bool IsNearDoor()
+    public void LoadNextScene()
     {
-        float distance = Vector3.Distance(player.transform.position, door.transform.position);
-        float unlockDistance = 2.0f;
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
 
-        return distance <= unlockDistance;
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        anim.SetTrigger("Start");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(levelIndex);
+           
     }
 }
 

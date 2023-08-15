@@ -31,7 +31,7 @@ public class UnlockDoor : MonoBehaviour
     private bool IsNearDoor()
      {
             float distance = Vector3.Distance(player.transform.position, door.transform.position);
-            float unlockDistance = 2.0f;
+            float unlockDistance = 5.0f;
 
             return distance <= unlockDistance;
         }

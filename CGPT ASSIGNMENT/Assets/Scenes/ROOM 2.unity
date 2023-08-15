@@ -2349,8 +2349,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 3.9753923}
-  m_Center: {x: 0, y: 0, z: -1.4876966}
+  m_Size: {x: 1, y: 1, z: 1.5225267}
+  m_Center: {x: 0, y: 0, z: -0.261264}
 --- !u!23 &1605858743
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2430,6 +2430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 105176831}
   door: {fileID: 1605858741}
+  key: {fileID: 0}
 --- !u!1 &1608407212
 GameObject:
   m_ObjectHideFlags: 0

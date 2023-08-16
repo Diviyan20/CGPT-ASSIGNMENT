@@ -140,18 +140,6 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4404195442393844, guid: 958521058a9c74341bcc8323137f68b1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.776473
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404195442393844, guid: 958521058a9c74341bcc8323137f68b1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.776473
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404195442393844, guid: 958521058a9c74341bcc8323137f68b1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 4.776473
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404195442393844, guid: 958521058a9c74341bcc8323137f68b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 252.96585
       objectReference: {fileID: 0}
@@ -452,18 +440,6 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4404195442393844, guid: 958521058a9c74341bcc8323137f68b1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.776473
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404195442393844, guid: 958521058a9c74341bcc8323137f68b1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.776473
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404195442393844, guid: 958521058a9c74341bcc8323137f68b1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 4.776473
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404195442393844, guid: 958521058a9c74341bcc8323137f68b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 254.53049
       objectReference: {fileID: 0}
@@ -525,6 +501,7 @@ GameObject:
   - component: {fileID: 152873944}
   - component: {fileID: 152873943}
   - component: {fileID: 152873942}
+  - component: {fileID: 152873946}
   m_Layer: 0
   m_Name: Door Knob
   m_TagString: Untagged
@@ -613,13 +590,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152873941}
   m_LocalRotation: {x: -0.70710707, y: -0, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: -0.3396023, y: -0.14393951, z: 0.06940004}
+  m_LocalPosition: {x: -0.305, y: -0.06818193, z: 0.06940004}
   m_LocalScale: {x: 0.12043999, y: 0.8964334, z: 0.052660353}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1605858745}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &152873946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152873941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80ccd0374481d546aab55cf888f574f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 105176831}
+  door: {fileID: 1605858741}
+  key: {fileID: 0}
+  raycastPoint: {fileID: 0}
 --- !u!1001 &161134926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1972,7 +1965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ce455c1fba5dc4a80d77ca42437b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1605858741}
+  door: {fileID: 0}
   player: {fileID: 105176831}
 --- !u!4 &1187379643 stripped
 Transform:
@@ -2678,8 +2671,8 @@ GameObject:
   - component: {fileID: 1605858744}
   - component: {fileID: 1605858743}
   - component: {fileID: 1605858742}
-  - component: {fileID: 1605858746}
   - component: {fileID: 1605858747}
+  - component: {fileID: 1605858748}
   m_Layer: 0
   m_Name: Door
   m_TagString: Door
@@ -2766,29 +2759,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605858741}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32.571, y: 21.737, z: 10.295}
-  m_LocalScale: {x: 1.4428693, y: 3.3, z: 0.12968038}
+  m_LocalPosition: {x: -32.508, y: 21.737, z: 10.295}
+  m_LocalScale: {x: 1.2076094, y: 3.3, z: 0.12968038}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 152873945}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1605858746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1605858741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e80ccd0374481d546aab55cf888f574f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 105176831}
-  door: {fileID: 1605858741}
-  key: {fileID: 0}
 --- !u!65 &1605858747
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2810,6 +2788,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1.8628867}
   m_Center: {x: 0, y: 0, z: -0.43144357}
+--- !u!114 &1605858748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605858741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670c19e6c07411847ac76cd7fbba0f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slidingDistance: 2
+  slidingSpeed: 3
+  isLocked: 0
 --- !u!1 &1608407212
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,11 +3034,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8d7e72b3ff90dca44a94ee605ee9bb13, type: 2}
     - target: {fileID: 4916463843041163819, guid: a207df67b44729246822452f345d28cf, type: 3}
       propertyPath: m_LocalScale.z
-      value: 11.849227
+      value: 12.27237
       objectReference: {fileID: 0}
     - target: {fileID: 4916463843041163819, guid: a207df67b44729246822452f345d28cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.27
+      value: -21.95
       objectReference: {fileID: 0}
     - target: {fileID: 4916463843041163819, guid: a207df67b44729246822452f345d28cf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3153,11 +3146,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8d7e72b3ff90dca44a94ee605ee9bb13, type: 2}
     - target: {fileID: 7818654022849888701, guid: a207df67b44729246822452f345d28cf, type: 3}
       propertyPath: m_LocalScale.z
-      value: 14.618023
+      value: 13.920789
       objectReference: {fileID: 0}
     - target: {fileID: 7818654022849888701, guid: a207df67b44729246822452f345d28cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.42
+      value: -5.8127
       objectReference: {fileID: 0}
     - target: {fileID: 7818654022849888701, guid: a207df67b44729246822452f345d28cf, type: 3}
       propertyPath: m_LocalPosition.y

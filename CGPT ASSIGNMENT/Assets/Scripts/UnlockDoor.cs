@@ -7,7 +7,8 @@ public class UnlockDoor : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject key;
- 
+    [SerializeField] private Transform raycastPoint;
+
 
     private void Start()
     {
@@ -20,9 +21,14 @@ public class UnlockDoor : MonoBehaviour
 
     public void Unlock()
     {
-        if(IsNearDoor())
+        RaycastHit hit;
+        if (Physics.Raycast(raycastPoint.position, raycastPoint.forward, out hit))
         {
-            Destroy(door);
+            if (IsNearDoor())
+            {
+                if(hit.collider.CompareTag("Door"))
+                Destroy(door);
+            }
         }
     }
 
@@ -31,7 +37,7 @@ public class UnlockDoor : MonoBehaviour
     private bool IsNearDoor()
      {
             float distance = Vector3.Distance(player.transform.position, door.transform.position);
-            float unlockDistance = 5.0f;
+            float unlockDistance = 2.0f;
 
             return distance <= unlockDistance;
         }

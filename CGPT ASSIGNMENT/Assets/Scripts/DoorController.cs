@@ -4,18 +4,33 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    public float slidingDistance = 2.0f; // The distance the door will slide open
-    public float slidingSpeed = 3.0f; // The speed at which the door slides open
-    public bool isLocked = false; // Indicates if the door is locked initially
-    private bool isOpen = false;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject door;
+    [SerializeField] private GameObject requiredKey;
+    [SerializeField] private AudioSource unlockSound;
+    public bool isLocked;
+    public bool isOpen;
 
+    private void Start()
+    {
+        isLocked = true;
+        isOpen = false;
+    }
     private void Update()
     {
         // Toggle door state on "E" press if it's not locked
-        if (!isLocked && Input.GetKeyDown(KeyCode.E))
+        if (requiredKey.activeInHierarchy == true && Input.GetKeyDown(KeyCode.E) && IsNearDoor())
         {
-            isOpen = !isOpen;
-            Destroy(gameObject);
+            isLocked = false;
+            isOpen =true;
+            unlockSound.Play();
+            door.SetActive(false);
+        }
+
+        else
+        {
+            isLocked = true;
+            isOpen = false;
         }
     }
 
@@ -23,5 +38,13 @@ public class DoorController : MonoBehaviour
     public void OpenDoor()
     {
         isLocked = false;
+    }
+
+    private bool IsNearDoor()
+    {
+        float distance = Vector3.Distance(player.transform.position, door.transform.position);
+        float unlockDistance = 2.0f;
+
+        return distance <= unlockDistance;
     }
 }

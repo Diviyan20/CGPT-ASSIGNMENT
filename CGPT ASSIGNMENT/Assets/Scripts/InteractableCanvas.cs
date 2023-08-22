@@ -6,7 +6,6 @@ public class InteractableCanvas : MonoBehaviour
 {
     public GameObject canvasObject;
 	public GameObject canvasObject2;
-    public GameObject currentInteractable;
 
     [SerializeField] private Transform raycastPoint; // Reference to the GameObject that will be the origin of the raycast.
 
@@ -25,7 +24,6 @@ public class InteractableCanvas : MonoBehaviour
             // Show the canvas when pointing at an interactable item
             canvasObject.SetActive(true);
 			canvasObject2.SetActive(false);
-            currentInteractable = hit.collider.gameObject;
         }
 		
 		else if (hit.collider.CompareTag("Wooden Door"))
@@ -33,7 +31,6 @@ public class InteractableCanvas : MonoBehaviour
             // Show the canvas when pointing at an interactable item
             canvasObject.SetActive(false);
 			canvasObject2.SetActive(true);
-            currentInteractable = hit.collider.gameObject;
         }
 		
         else
@@ -41,7 +38,6 @@ public class InteractableCanvas : MonoBehaviour
             // Hide the canvas when not pointing at an interactable item
             canvasObject.SetActive(false);
 			canvasObject2.SetActive(false);
-            currentInteractable = null;
         }
     }
     else
@@ -51,7 +47,6 @@ public class InteractableCanvas : MonoBehaviour
 
         // Hide the canvas when not pointing at anything
         canvasObject.SetActive(false);
-        currentInteractable = null;
     }
 }
 }

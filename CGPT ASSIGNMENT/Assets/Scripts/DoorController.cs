@@ -7,37 +7,34 @@ public class DoorController : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject requiredKey;
-    [SerializeField] private AudioSource unlockSound;
-    public bool isLocked;
+    [SerializeField] private AudioSource UnlockSound;
     public bool isOpen;
+    public bool isLocked;
 
     private void Start()
     {
-        isLocked = true;
         isOpen = false;
+        isLocked = true;
+
     }
+
     private void Update()
     {
-        // Toggle door state on "E" press if it's not locked
-        if (requiredKey.activeInHierarchy == true && Input.GetKeyDown(KeyCode.E) && IsNearDoor())
+        if(requiredKey.activeInHierarchy == true && IsNearDoor() && Input.GetKeyDown(KeyCode.E))
         {
+            requiredKey.SetActive(false);
+            UnlockSound.Play();
+            isOpen = true;
             isLocked = false;
-            isOpen =true;
-            unlockSound.Play();
             door.SetActive(false);
         }
 
         else
         {
+            door.SetActive(true);
             isLocked = true;
             isOpen = false;
         }
-    }
-
-    // Method to open the door when the correct passcode is entered
-    public void OpenDoor()
-    {
-        isLocked = false;
     }
 
     private bool IsNearDoor()

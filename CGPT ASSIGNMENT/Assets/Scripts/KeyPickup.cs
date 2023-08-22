@@ -4,32 +4,33 @@ using UnityEngine;
 
 public class KeyPickup : MonoBehaviour
 {
-    [SerializeField] private GameObject key;
-    [SerializeField] private GameObject Invkey;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject key;
+    [SerializeField] private GameObject InvKey;
     [SerializeField] private AudioSource PickupSound;
-    void Start()
+
+
+    private void Start()
     {
-        Invkey.SetActive(false);
-        
+        InvKey.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-       if(Input.GetKeyDown(KeyCode.E) && IsNearKey())
+        if(Input.GetKeyDown(KeyCode.E) && IsNearKey())
         {
             key.SetActive(false);
             PickupSound.Play();
-            Invkey.SetActive(true);
+            InvKey.SetActive(true);
         }
     }
 
     private bool IsNearKey()
     {
-         float distance = Vector3.Distance(player.transform.position, key.transform.position);
-         float unlockDistance = 2.0f;
+        float distance = Vector3.Distance(player.transform.position, key.transform.position);
+        float pickupkDistance = 2.0f;
 
-         return distance <= unlockDistance;
+        return distance <= pickupkDistance;
     }
 }
+

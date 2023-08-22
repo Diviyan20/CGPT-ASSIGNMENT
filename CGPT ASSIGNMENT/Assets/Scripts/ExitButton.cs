@@ -5,19 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ExitButton : MonoBehaviour
 {
-    public NoteController noteController;
-    public TimeController timer;
-   
+    public NoteController noteController;   
 
     private void Start()
     {
-        timer = FindObjectOfType<TimeController>();
         noteController = FindObjectOfType<NoteController>();
     }
 
     public void OnExitButtonClicked()
     {
         noteController.ExitNote();
-        timer.StartTimer();
     }
 }

@@ -1,23 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class TimeController : MonoBehaviour
 {
-    public float totalTimeInSeconds = 10f; // 10 minutes in seconds
+    public float totalTimeInSeconds = 420f; // 10 minutes in seconds
     public Text timerText; // Reference to the UI Text that will display the timer
+	public AudioSource fiveminutes;
+	public AudioSource oneminutes;
+	public AudioSource countdown;
 
     private float currentTime; // Current time left in seconds
     private bool isTimerRunning = false; // Flag to check if the timer is running
     private CanvasGroup timerUI;
+	private bool playedFiveMinutesAudio = false;
+	private bool playedOneMinuteAudio = false;
+	private bool playedThirtySecondsAudio = false;
 
     private void Start()
     {
         ResetTimer();
         timerUI = GetComponent<CanvasGroup>();
         HideTimer();
+		playedFiveMinutesAudio = false;
+		playedOneMinuteAudio = false;
+		playedThirtySecondsAudio = false;
 
     }
 
@@ -27,6 +37,7 @@ public class TimeController : MonoBehaviour
         {
             currentTime -= Time.deltaTime;
             UpdateTimerDisplay();
+			CheckTime();
 
             if (currentTime <= 0f)
             {
@@ -81,4 +92,25 @@ public class TimeController : MonoBehaviour
         Debug.Log("Timer Finished!");
         SceneManager.LoadScene("gameOverScene");
     }
+	
+	private void CheckTime()
+	{
+		if (currentTime <= 300f && !playedFiveMinutesAudio)
+		{
+			fiveminutes.Play();
+			playedFiveMinutesAudio = true;
+		}
+
+		if (currentTime <= 60f && !playedOneMinuteAudio)
+		{
+			oneminutes.Play();
+			playedOneMinuteAudio = true;
+		}
+
+		if (currentTime <= 30f && !playedThirtySecondsAudio)
+		{
+			countdown.Play();
+			playedThirtySecondsAudio = true;
+		}
+	}
 }

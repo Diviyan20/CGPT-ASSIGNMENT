@@ -17,7 +17,7 @@ public class VolumeManager : MonoBehaviour
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", volume);
-        SaveVolumeValue(); // Save the volume value when adjusted
+        SaveVolumeValue(volume); // Save the volume value when adjusted
     }
 
     private void LoadVolumeValue()
@@ -35,8 +35,8 @@ public class VolumeManager : MonoBehaviour
         }
     }
 
-    private void SaveVolumeValue()
+    private void SaveVolumeValue(float volume)
     {
-        PlayerPrefs.SetFloat("VolumeValue", volumeSlider.value);
+        PlayerPrefs.SetFloat("VolumeValue", volume);
     }
 }

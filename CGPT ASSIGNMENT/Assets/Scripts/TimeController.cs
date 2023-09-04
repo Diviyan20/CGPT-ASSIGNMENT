@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class TimeController : MonoBehaviour
 {
     public float totalTimeInSeconds = 420f; // 10 minutes in seconds
-    public Text timerText; // Reference to the UI Text that will display the timer
+    public TextMeshPro timerText; // Reference to the UI Text that will display the timer
 	public AudioSource fiveminutes;
 	public AudioSource oneminutes;
 	public AudioSource countdown;

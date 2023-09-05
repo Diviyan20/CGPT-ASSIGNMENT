@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorController : MonoBehaviour
+public class NewDoorController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject door;
@@ -20,7 +20,7 @@ public class DoorController : MonoBehaviour
 
     private void Update()
     {
-        if(requiredKey.activeInHierarchy == true && IsNearDoor() && Input.GetKeyDown(KeyCode.E))
+        if (requiredKey.activeInHierarchy == true && Input.GetKeyDown(KeyCode.E))
         {
             requiredKey.SetActive(false);
             UnlockSound.Play();
@@ -35,13 +35,5 @@ public class DoorController : MonoBehaviour
             isLocked = true;
             isOpen = false;
         }
-    }
-
-    private bool IsNearDoor()
-    {
-        float distance = Vector3.Distance(player.transform.position, door.transform.position);
-        float unlockDistance = 3.0f;
-
-        return distance <= unlockDistance;
     }
 }

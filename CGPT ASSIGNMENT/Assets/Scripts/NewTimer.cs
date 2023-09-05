@@ -8,7 +8,7 @@ using TMPro;
 public class NewTimer : MonoBehaviour
 {
     [SerializeField] private float TotalTime = 420f;
-    [SerializeField] private TextMeshPro TimerText;
+    [SerializeField] private TextMeshProUGUI TimerText;
 
     private float CurrentTime;
     private bool isRunning = false;

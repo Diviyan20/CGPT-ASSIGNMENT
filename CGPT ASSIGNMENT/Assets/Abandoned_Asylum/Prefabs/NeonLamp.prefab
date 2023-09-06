@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 4423407365265172}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 360, z: 0}
 --- !u!33 &33225400113327444
 MeshFilter:
@@ -128,8 +128,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
-  m_Range: 22.551079
+  m_Intensity: 3.05
+  m_Range: 4.2575607
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

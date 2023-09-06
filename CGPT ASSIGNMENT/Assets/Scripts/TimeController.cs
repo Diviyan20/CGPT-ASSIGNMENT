@@ -9,7 +9,7 @@ using TMPro;
 public class TimeController : MonoBehaviour
 {
     public float totalTimeInSeconds = 420f; // 10 minutes in seconds
-    public TextMeshPro timerText; // Reference to the UI Text that will display the timer
+    public TextMeshProUGUI timerText; // Reference to the UI Text that will display the timer
 	public AudioSource fiveminutes;
 	public AudioSource oneminutes;
 	public AudioSource countdown;

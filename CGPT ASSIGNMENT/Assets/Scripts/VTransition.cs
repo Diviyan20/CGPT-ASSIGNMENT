@@ -20,7 +20,7 @@ public class VTransition : MonoBehaviour
     {
         currentTime -= Time.deltaTime;
 
-        if (currentTime <= 151f && currentTime > 151f - 15f)
+        if (currentTime < 151f )
         {
             ButtonToShow.SetActive(true);
         }

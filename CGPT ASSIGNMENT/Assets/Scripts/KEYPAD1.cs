@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Keypad : MonoBehaviour
+public class KEYPAD1 : MonoBehaviour
 {
-    public Text DisplayNumbers; // Referring to the number display Text UI element
+    public TextMeshProUGUI DisplayNumbers; // Referring to the number display Text UI element
     private string enteredNumbers = ""; // Storing the entered numbers as a string
     private int passwordLength = 4; // Setting the max password Length to 4 numbers
     private string password = "6716";

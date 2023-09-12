@@ -14,6 +14,7 @@ public class VTransition : MonoBehaviour
     {
         currentTime = totalTime;
         ButtonToShow.SetActive(false);
+        Cursor.visible = true;
     }
 
     void Update()

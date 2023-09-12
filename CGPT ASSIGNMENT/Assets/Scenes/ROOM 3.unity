@@ -2158,7 +2158,7 @@ GameObject:
   - component: {fileID: 422683224}
   m_Layer: 0
   m_Name: 'Note Object 3 '
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4587,7 +4587,7 @@ GameObject:
   - component: {fileID: 756925421}
   m_Layer: 0
   m_Name: NOTES
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10067,7 +10067,7 @@ GameObject:
   - component: {fileID: 1687491254}
   m_Layer: 0
   m_Name: Note Object 1
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10378,7 +10378,7 @@ GameObject:
   - component: {fileID: 1730161501}
   m_Layer: 0
   m_Name: Note Object 2
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12443,7 +12443,7 @@ GameObject:
   - component: {fileID: 2046414286}
   m_Layer: 0
   m_Name: Door Knob
-  m_TagString: Untagged
+  m_TagString: Wooden Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -7,11 +7,18 @@ using TMPro;
 
 public class NewTimer : MonoBehaviour
 {
+	public AudioSource fiveminutes;
+	public AudioSource oneminutes;
+	public AudioSource countdown;
+
     [SerializeField] private float TotalTime = 420f;
     [SerializeField] private TextMeshProUGUI TimerText;
 
     private float CurrentTime;
     private bool isRunning = false;
+	private bool playedFiveMinutesAudio = false;
+	private bool playedOneMinuteAudio = false;
+	private bool playedThirtySecondsAudio = false;
 
 
     private void Start()
@@ -19,6 +26,9 @@ public class NewTimer : MonoBehaviour
         CurrentTime = TotalTime;
         StartTimer();
         UpdateTimer();
+		playedFiveMinutesAudio = false;
+		playedOneMinuteAudio = false;
+		playedThirtySecondsAudio = false;
     }
 
     // Update is called once per frame
@@ -28,6 +38,7 @@ public class NewTimer : MonoBehaviour
         {
             CurrentTime -= Time.deltaTime;
             UpdateTimer();
+			CheckTime();
 
             if(CurrentTime <= 0f)
             {
@@ -61,4 +72,25 @@ public class NewTimer : MonoBehaviour
         Debug.Log("Timer has Ended");
         SceneManager.LoadScene("gameOverScene");
     }
+	
+		private void CheckTime()
+	{
+		if (CurrentTime <= 300f && !playedFiveMinutesAudio)
+		{
+			fiveminutes.Play();
+			playedFiveMinutesAudio = true;
+		}
+
+		if (CurrentTime <= 60f && !playedOneMinuteAudio)
+		{
+			oneminutes.Play();
+			playedOneMinuteAudio = true;
+		}
+
+		if (CurrentTime <= 30f && !playedThirtySecondsAudio)
+		{
+			countdown.Play();
+			playedThirtySecondsAudio = true;
+		}
+	}
 }

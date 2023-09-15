@@ -71,6 +71,8 @@ public class NewTimer : MonoBehaviour
         TimerText.text = "00:00";
         Debug.Log("Timer has Ended");
         SceneManager.LoadScene("gameOverScene");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 	
 		private void CheckTime()

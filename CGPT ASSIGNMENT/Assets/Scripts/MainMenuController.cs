@@ -28,6 +28,7 @@ public class MainMenuController : MonoBehaviour
     {
         string lastScene = PlayerPrefs.GetString("LastScene");
         SceneManager.LoadScene(lastScene);
+        Cursor.visible = true;
     }
 	
 	public void StartNewGame()

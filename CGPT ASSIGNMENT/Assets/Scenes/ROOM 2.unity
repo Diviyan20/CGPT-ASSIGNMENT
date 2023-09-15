@@ -10380,6 +10380,10 @@ PrefabInstance:
       value: Timer
       objectReference: {fileID: 0}
     - target: {fileID: 4747995036248658337, guid: 66318b5932b34694e8dfc4a51cf6a241, type: 3}
+      propertyPath: TotalTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747995036248658337, guid: 66318b5932b34694e8dfc4a51cf6a241, type: 3}
       propertyPath: countdown
       value: 
       objectReference: {fileID: 1530731574}
